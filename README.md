@@ -1,4 +1,4 @@
-# SP2022
+# SP
 A repo for all of my solved coding problems for Structured Programming at FCSE.  
   
 **Auditoriski** - contains all the problems that the assistant solves.  
