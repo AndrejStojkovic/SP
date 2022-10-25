@@ -5,10 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SP - Andrej Stojkovikj</title>
-  <link rel="stylesheet" href="styles.css" type="text/css">
+  <link rel="stylesheet" href="site/styles.css" type="text/css">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body onload="onPageLoad()">
   
   <div id="main" class="flex flex-col justify-center items-center border-b-2">
     <div id="head" class="flex gap-4">
@@ -26,7 +26,7 @@
       <div class="h-full w-[2px] bg-neutral-300"></div>
 
       <div class="flex items-center text-2xl leading-none">
-        Faculty of<br>Computer Science<br>and Engineering
+        Faculty of<br>Computer Science<br>and Engineering<br>
       </div>
     </div>
 
@@ -50,14 +50,58 @@
       </div>
     </div>
 
+    <div class="text-lg flex gap-6">
+      Other links:
+
+      <div class="flex gap-2">
+        <div class="text-neutral-600">|</div>
+        <a href="https://github.com/AndrejStojkovic" class="text-neutral-600 hover:text-neutral-800 hover:underline">
+          Github
+        </a>
+        <div class="text-neutral-600">|</div>
+        <a href="https://github.com/AndrejStojkovic/SP" class="text-neutral-600 hover:text-neutral-800 hover:underline">
+          Repo
+        </a>
+        <div class="text-neutral-600">|</div>
+      </div>
+    </div>
+
     <div id="scroll" class="absolute left-1/2 bottom-1 transform -translate-x-1/2 text-lg">
       You can also just scroll. ↓
     </div>
   </div>
 
-  <div id="contents">
-    this is not the <b>content</b> you are looking for.
+  <div id="contents" class="flex flex-col justify-center border-b-2 py-10">
+    <div class="max-w-sm w-full mx-auto">
+      <div id="title" class="text-2xl font-semibold px-2">
+        Table of Contents
+      </div>
+      <hr>
+
+      <div class="flex flex-col px-2 pt-2">
+        <div id="auditoriski">
+          <a href="Auditoriski" class="text-xl text-neutral-800 hover:text-black hover:underline">
+            Auditoriski
+          </a>
+        </div>
+        <div id="labs">
+          <a href="Labs" class="text-xl text-neutral-800 hover:text-black hover:underline">
+            Labs
+          </a>
+        </div>
+        <div id="kolokvium">
+          <a href="Kolokvium" class="text-xl text-neutral-800 hover:text-black hover:underline">
+            Kolokvium
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <div id="footer" class="w-full p-4 text-center">
+    Copyright &copy; <span id="year">0000</span> - <a href="https://github.com/AndrejStojkovic" class="hover:text-neutral-700 underline">Andrej Stojkovikj</a>
+  </div>
+
+  <script src="./site/index.js"></script>
 </body>
 </html>
