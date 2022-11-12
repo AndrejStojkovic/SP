@@ -38,7 +38,7 @@ int main() {
   for(int i = 0; i < indeks; i++) {
     s *= koef[i];
 
-    if(maxKoeficient < koef[i]) {
+    if(koef[i] > maxKoeficient) {
       maxKoeficient = koef[i];
       r = i;
     }
