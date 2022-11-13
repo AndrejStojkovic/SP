@@ -13,21 +13,16 @@
 #include <stdio.h>
 
 int main() {
-    int n, prv, vtor, raz;
+    int n, prv, vtor, najgolema = -1;
     scanf("%d", &n);
-
     scanf("%d", &prv);
-    int najgolema = -1;
 
     for(int i = 0; i < n - 1; i++) {
         scanf("%d", &vtor);
-        raz = vtor - prv;
-
-        if(raz > najgolema) najgolema = raz;
+        if(vtor - prv > najgolema) najgolema = vtor - prv;
         prv = vtor;
     }
 
     printf("%d", najgolema);
-
     return 0;
 }
