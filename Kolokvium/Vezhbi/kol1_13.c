@@ -12,7 +12,7 @@
 #include <stdio.h>
 
 int lastDigit(int n, int d) {
-  return (n % 10) == d ? 1 : 0;
+  return (n % 10) == d;
 }
 
 int main() {
