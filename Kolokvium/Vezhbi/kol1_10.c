@@ -14,25 +14,14 @@
 int main() {
   int broj;
 
-  while(1) {
-    if(!scanf("%d", &broj)) {
-      break;
-    }
+  while(scanf("%d", &broj)) {
+    if(broj < 10) continue;
 
-    if(broj < 10) {
-      continue;
-    }
+    int n = broj, sekv;
 
-    int n = broj;
-    int sekv;
-
-    if(broj % 10 > (broj / 10) % 10) {
-      sekv = 1;
-    } else if(broj % 10 < (broj / 10) % 10) {
-      sekv = 0;
-    } else {
-      continue;
-    }
+    if(broj % 10 > (broj / 10) % 10) sekv = 1;
+    else if(broj % 10 < (broj / 10) % 10) sekv = 0;
+    else continue;
 
     while(broj > 0) {
       broj /= 10;
@@ -42,13 +31,12 @@ int main() {
         break;
       }
 
-      int a = broj % 10;
-      int b = (broj / 10) % 10;
+      int a = broj % 10, b = (broj / 10) % 10;
 
       if(sekv) {
-        if(a >= b) { break; }
+        if(a >= b) break;
       } else {
-        if(a <= b) { break; }
+        if(a <= b) break;
       }
 
       sekv = !sekv;
