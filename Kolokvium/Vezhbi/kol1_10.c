@@ -33,12 +33,9 @@ int main() {
 
       int a = broj % 10, b = (broj / 10) % 10;
 
-      if(sekv) {
-        if(a >= b) break;
-      } else {
-        if(a <= b) break;
-      }
-
+      if(sekv && a >= b) break;
+      else if(!sekv && a <= b) break;
+     
       sekv = !sekv;
     }
   }
