@@ -28,7 +28,7 @@ int main() {
   }
 
   if(s % 16 == 0) {
-    if((s % 10) == 6 && (s / 10) % 10 == 1) {
+    if(s % 100 == 16) {
       printf("Poln pogodok");
     } else {
       printf("Pogodok");
