@@ -3,7 +3,7 @@
 int main() {
     char c, prev, p = 0, ct = 0;
 
-    while(scanf("%c", &c)) {
+    while(scanf(" %c", &c)) {
         if(c < 'a' || c > 'z') break;
 
         if(!p) {
