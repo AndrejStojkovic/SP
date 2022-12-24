@@ -15,35 +15,38 @@
 #include <ctype.h>
 
 char pomestuvanje(char bukva, int x) {
-  bukva++;
+    if(toupper(++bukva) > 'Z') {
+        if(bukva > 'z') {
+            bukva = 'a';
+        } else if(bukva > 'Z') {
+            bukva = 'A';
+        }
+    }
 
-  if(toupper(bukva) > 'Z') {
-    if(bukva > 'z') { bukva = 'a'; }
-    else if(bukva > 'Z') { bukva = 'A'; }
-  }
+    if(x > 1) return pomestuvanje(bukva, x - 1);
 
-  if(x > 1) { return pomestuvanje(bukva, x - 1); }
-  else { return bukva; }
+    return bukva;
 }
 
 int main() {
-  int n, x;
-  scanf("%d %d", &n, &x);
+    int n, x;
+    scanf("%d %d", &n, &x);
 
-  for(int i = 0; i <= n; i++) {
-    char rechenica[100];
-    fgets(rechenica, 100, stdin);
+    for(int i = 0; i <= n; i++) {
+        char rechenica[100];
+        fgets(rechenica, 100, stdin);
+        
+        if(strlen(rechenica) <= 1) continue;
 
-    if(strlen(rechenica) <= 1) { continue; }
+        for(int j = 0; j < strlen(rechenica); j++) {
+            if(tolower(rechenica[j]) < 'a' || tolower(rechenica[j]) > 'z') continue;
 
-    for(int j = 0; j < strlen(rechenica); j++) {
-      if(tolower(rechenica[j]) < 'a' || tolower(rechenica[j]) > 'z') { continue; }
+            rechenica[j] = pomestuvanje(rechenica[j], x);
+        }
 
-      rechenica[j] = pomestuvanje(rechenica[j], x);
+        printf("%s", rechenica);
     }
 
-    printf("%s", rechenica);
-  }
-
-  return 0;
+    return 0;
 }
+
