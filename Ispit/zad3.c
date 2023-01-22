@@ -41,14 +41,8 @@ int main() {
     for(int i = 0; i < strlen(moves); i++) {
         if(moves[i] != 'F' && moves[i] != 'L' && moves[i] != 'R') continue;
 
-        if(moves[i] == 'L') {
-            facing--;
-            if(facing < 0) facing = 3;
-        } else if(moves[i] == 'R') {
-            facing++;
-            if(facing > 3) facing = 0;
-        }
-
+        facing = moves[i] == 'L' ? facing - 1 : moves[i] == 'R' ? facing + 1 : facing;
+        facing = facing < 0 ? 3 : facing > 3 ? 0 : facing;
         moveSnake(&player_x, &player_y, facing, map);
 
         if(player_x == apple_x && player_y == apple_y) {
