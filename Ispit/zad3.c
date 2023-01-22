@@ -1,5 +1,3 @@
-// 3.
-
 #include <stdio.h>
 #include <string.h>
 
@@ -41,17 +39,17 @@ int main() {
     facing = 0;
 
     for(int i = 0; i < strlen(moves); i++) {
-        if(moves[i] == 'F') {
-            moveSnake(&player_x, &player_y, facing, map);
-        } else if(moves[i] == 'L') {
+        if(moves[i] != 'F' && moves[i] != 'L' && moves[i] != 'R') continue;
+
+        if(moves[i] == 'L') {
             facing--;
             if(facing < 0) facing = 3;
-            moveSnake(&player_x, &player_y, facing, map);
         } else if(moves[i] == 'R') {
             facing++;
             if(facing > 3) facing = 0;
-            moveSnake(&player_x, &player_y, facing, map);
         }
+
+        moveSnake(&player_x, &player_y, facing, map);
 
         if(player_x == apple_x && player_y == apple_y) {
             printf("NJAM");
