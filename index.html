@@ -5,10 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SP - Andrej Stojkovikj</title>
-  <link rel="stylesheet" href="site/styles.css" type="text/css">
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: monospace;
+      cursor: default;
+    }
+
+    #main {
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
 </head>
-<body onload="onPageLoad()">
+<body>
   
   <div id="main" class="flex flex-col justify-center items-center border-b-2">
     <div id="head" class="flex gap-4">
@@ -35,15 +48,15 @@
 
       <div class="flex gap-2">
         <div class="text-neutral-600">|</div>
-        <a href="kolokvium" class="text-neutral-600 hover:text-neutral-800 hover:underline">
+        <a href="Excercises" class="text-neutral-600 hover:text-neutral-800 hover:underline">
           excercises();
         </a>
         <div class="text-neutral-600">|</div>
-        <a href="labs" class="text-neutral-600 hover:text-neutral-800 hover:underline">
+        <a href="Labs" class="text-neutral-600 hover:text-neutral-800 hover:underline">
           labs();
         </a>
         <div class="text-neutral-600">|</div>
-        <a href="kolokvium" class="text-neutral-600 hover:text-neutral-800 hover:underline">
+        <a href="Exams" class="text-neutral-600 hover:text-neutral-800 hover:underline">
           exams();
         </a>
         <div class="text-neutral-600">|</div>
@@ -79,6 +92,8 @@
     Copyright &copy; <span id="year">0000</span> - <a href="https://github.com/AndrejStojkovic" class="hover:text-neutral-700 underline">Andrej Stojkovikj</a>
   </div>
 
-  <script src="./site/index.js"></script>
+  <script>
+    document.getElementById('year').innerHTML = new Date().getFullYear();
+  </script>
 </body>
 </html>
